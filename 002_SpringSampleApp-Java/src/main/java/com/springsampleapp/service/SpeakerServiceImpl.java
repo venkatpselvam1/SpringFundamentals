@@ -10,12 +10,7 @@ import java.util.List;
 
 @Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
-    @Autowired
     private SpeakerRepository speakerRepository;
-    public SpeakerServiceImpl()
-    {
-        System.out.println("This is the default parameterless constructor - SpeakerServiceImpl");
-    }
     public SpeakerServiceImpl(SpeakerRepository speakerRepository)
     {
         System.out.println("This is the parameterised constructor - SpeakerServiceImpl");
