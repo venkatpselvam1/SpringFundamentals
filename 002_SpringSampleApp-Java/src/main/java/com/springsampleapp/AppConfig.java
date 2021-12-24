@@ -8,9 +8,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Calendar;
+
 @Configuration
 @ComponentScan({"com.springsampleapp"})
 public class AppConfig {
+    @Bean("calendarFactory")
+    public CalenderFactory getCalenderFactory()
+    {
+        var calenderFactory = new CalenderFactory();
+        calenderFactory.AddDays(2);
+        return calenderFactory;
+    }
+
+    @Bean("calendar")
+    public Calendar getCalendar() throws Exception
+    {
+        return getCalenderFactory().getObject();
+    }
     /*
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService()
