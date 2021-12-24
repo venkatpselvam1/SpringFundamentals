@@ -13,12 +13,18 @@ public class AppConfig {
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService()
     {
-        var speakerService =  new SpeakerServiceImpl(getSpeakerRepository());
+        //var speakerService =  new SpeakerServiceImpl(getSpeakerRepository());
+
+        //using the parameterless constructor will throw nullpointer exception
+        // to fix this:
+        // 1. we need to add @Autowired annotation in the setter function (or)
+        // 2. we need to add @Autowired annotation in the private property
+        var speakerService =  new SpeakerServiceImpl();
+
         // it is an example for setter injection
         //speakerService.setSpeakerRepository(getSpeakerRepository());
         return speakerService;
     }
-
     @Bean(name = "speakerRepository")
     public SpeakerRepository getSpeakerRepository()
     {
