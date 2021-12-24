@@ -12,6 +12,9 @@ import java.util.List;
 public class SpeakerRepositoryImpl implements SpeakerRepository {
 
     private Calendar calendar;
+
+    @Value("#{ T(java.lang.Math).random() * 10}")
+    private int speakerCount;
     public SpeakerRepositoryImpl(Calendar calendar)
     {
         this.calendar = calendar;
@@ -21,10 +24,14 @@ public class SpeakerRepositoryImpl implements SpeakerRepository {
     public List<Speaker> getAllSpeaker()
     {
         var lis = new ArrayList<Speaker>();
-        var speaker = new Speaker();
-        speaker.setFirstName("venkatesan");
-        speaker.setLastName("pannerselvam");
-        lis.add(speaker);
+        for (int i=0; i < speakerCount; i++)
+        {
+            var speaker = new Speaker();
+            speaker.setFirstName("venkatesan"+i);
+            speaker.setLastName("pannerselvam"+i);
+            lis.add(speaker);
+        }
+
         System.out.println(calendar.getTime());
         return lis;
     }
