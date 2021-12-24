@@ -1,10 +1,13 @@
 package com.springsampleapp.repository;
 
 import com.springsampleapp.model.Speaker;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository("speakerRepository")
 public class SpeakerRepositoryImpl implements SpeakerRepository {
     @Override
     public List<Speaker> getAllSpeaker()

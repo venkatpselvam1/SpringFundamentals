@@ -5,11 +5,13 @@ import com.springsampleapp.repository.SpeakerRepositoryImpl;
 import com.springsampleapp.service.SpeakerService;
 import com.springsampleapp.service.SpeakerServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan({"com.springsampleapp"})
 public class AppConfig {
-
+    /*
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService()
     {
@@ -30,5 +32,5 @@ public class AppConfig {
     {
         return new SpeakerRepositoryImpl();
     }
-
+    */
 }

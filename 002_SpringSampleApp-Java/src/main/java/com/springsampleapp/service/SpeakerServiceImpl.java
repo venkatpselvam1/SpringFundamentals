@@ -4,9 +4,11 @@ import com.springsampleapp.model.Speaker;
 import com.springsampleapp.repository.SpeakerRepository;
 import com.springsampleapp.repository.SpeakerRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("speakerService")
 public class SpeakerServiceImpl implements SpeakerService {
     @Autowired
     private SpeakerRepository speakerRepository;
