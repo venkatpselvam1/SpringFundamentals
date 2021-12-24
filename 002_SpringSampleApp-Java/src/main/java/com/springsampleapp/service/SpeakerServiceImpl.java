@@ -6,6 +6,7 @@ import com.springsampleapp.repository.SpeakerRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.wiring.BeanConfigurerSupport;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
+@Profile("dev")
 //@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class SpeakerServiceImpl implements SpeakerService {
     private SpeakerRepository speakerRepository;

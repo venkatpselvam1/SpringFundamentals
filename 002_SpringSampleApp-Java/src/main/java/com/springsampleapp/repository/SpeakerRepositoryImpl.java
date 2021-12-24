@@ -3,12 +3,14 @@ package com.springsampleapp.repository;
 import com.springsampleapp.model.Speaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 @Repository("speakerRepository")
+@Profile("dev")
 public class SpeakerRepositoryImpl implements SpeakerRepository {
 
     private Calendar calendar;
