@@ -10,10 +10,16 @@ public class Main {
     {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         var speakerService = applicationContext.getBean("speakerService", SpeakerService.class);
+
         var speakers = speakerService.getAll();
         for (var speaker: speakers)
         {
             System.out.println(speaker);
         }
+        var speakerService1 = applicationContext.getBean("speakerService", SpeakerService.class);
+        System.out.println(speakerService);
+        System.out.println(speakerService1);
+        System.out.println("In case of singleton, both of them will be same object. Same address");
+
     }
 }

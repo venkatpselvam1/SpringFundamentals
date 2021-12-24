@@ -4,11 +4,15 @@ import com.springsampleapp.model.Speaker;
 import com.springsampleapp.repository.SpeakerRepository;
 import com.springsampleapp.repository.SpeakerRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.wiring.BeanConfigurerSupport;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service("speakerService")
+//@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class SpeakerServiceImpl implements SpeakerService {
     private SpeakerRepository speakerRepository;
     public SpeakerServiceImpl(SpeakerRepository speakerRepository)
