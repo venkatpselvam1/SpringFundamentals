@@ -12,7 +12,8 @@
 
     <bean name="speakerRepository" class="com.springsampleapp.repository.SpeakerRepositoryImpl"></bean>
     <bean name="speakerService" class="com.springsampleapp.service.SpeakerServiceImpl">
-        <property name="speakerRepository" ref="speakerRepository"></property>
+<!--        <property name="speakerRepository" ref="speakerRepository"></property>-->
+        <constructor-arg name="speakerRepository" ref="speakerRepository"></constructor-arg>
     </bean>
 
 </beans>
