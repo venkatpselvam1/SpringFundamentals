@@ -9,6 +9,7 @@ import org.springframework.beans.factory.wiring.BeanConfigurerSupport;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
@@ -20,6 +21,13 @@ public class SpeakerServiceImpl implements SpeakerService {
         System.out.println("This is the parameterised constructor - SpeakerServiceImpl");
         this.speakerRepository = speakerRepository;
     }
+
+    @PostConstruct
+    private void PostProcessor()
+    {
+        System.out.println("After creating the bean");
+    }
+
     @Override
     public List<Speaker> getAll()
     {
